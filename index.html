@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-cn">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="step on javascript">
+<meta name="keywords" content="vue webpack datastructure">
+<meta property="og:type" content="website">
+<meta property="og:title" content="fruit time">
+<meta property="og:url" content="http://willwei.github.io/index.html">
+<meta property="og:site_name" content="fruit time">
+<meta property="og:description" content="step on javascript">
+<meta property="og:locale" content="zh-cn">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="fruit time">
+<meta name="twitter:description" content="step on javascript">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://willwei.github.io/">
+
+
+
+
+
+  <title>fruit time</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-cn">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">fruit time</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://willwei.github.io/2018/08/11/data-structure/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Will Wei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fruit time">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/11/data-structure/" itemprop="url">数据结构笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-11T00:00:00+08:00">
+                2018-08-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="shuffle"><a href="#shuffle" class="headerlink" title="shuffle"></a>shuffle</h2><p>Fisher-Yates</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> source_array = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">shuffle</span>(<span class="params">source_array</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> target_array = []</span><br><span class="line">  <span class="keyword">while</span>(source_array.length) &#123;</span><br><span class="line">    <span class="keyword">var</span> random_index = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * source_array.length)</span><br><span class="line">    target_array.push(source_array[random_index])</span><br><span class="line">    source_array.splice(random_index, <span class="number">1</span>)</span><br><span class="line">    <span class="built_in">console</span>.log(random_index, source_array)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> target_array</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result = shuffle(source_array)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(result)</span><br></pre></td></tr></table></figure>
+<h2 id="两个有序数组合并"><a href="#两个有序数组合并" class="headerlink" title="两个有序数组合并"></a>两个有序数组合并</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr1 = [<span class="number">2</span>, <span class="number">7</span>, <span class="number">15</span>, <span class="number">23</span>]</span><br><span class="line"><span class="keyword">var</span> arr2 = [<span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sort_2_ordered_array</span>(<span class="params">arr1, arr2</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> result = [];</span><br><span class="line">  <span class="keyword">var</span> index1 = <span class="number">0</span>, index2 = <span class="number">0</span>, len1 = arr1.length, len2 = arr2.length</span><br><span class="line">  <span class="keyword">while</span> (index1 &lt; len1 &amp;&amp; index2 &lt; len2) &#123;</span><br><span class="line">      <span class="keyword">if</span> (arr1[index1] &lt; arr2[index2]) &#123;</span><br><span class="line">        result.push(arr1[index1])</span><br><span class="line">        index1 ++</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        result.push(arr2[index2])</span><br><span class="line">        index2 ++</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">while</span> (index1 &lt; len1) &#123;</span><br><span class="line">    result.push(arr1[index1])</span><br><span class="line">    index1 ++</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">while</span> (index2 &lt; len2) &#123;</span><br><span class="line">    result.push(arr2[index2])</span><br><span class="line">    index2 ++</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">return</span> result</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> result = sort_2_ordered_array(arr1, arr2)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(result)</span><br></pre></td></tr></table></figure>
+<h2 id="获取一个数组中第二大的值"><a href="#获取一个数组中第二大的值" class="headerlink" title="获取一个数组中第二大的值"></a>获取一个数组中第二大的值</h2><h2 id="求解一颗二叉树的最大权重路径"><a href="#求解一颗二叉树的最大权重路径" class="headerlink" title="求解一颗二叉树的最大权重路径"></a>求解一颗二叉树的最大权重路径</h2><h2 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h2>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://willwei.github.io/2018/08/10/vue-lifecycle/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Will Wei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fruit time">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/10/vue-lifecycle/" itemprop="url">VueLifeCycle源码学习笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-10T21:58:31+08:00">
+                2018-08-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="lifecycle"><a href="#lifecycle" class="headerlink" title="lifecycle"></a>lifecycle</h1><h2 id="mountComponent"><a href="#mountComponent" class="headerlink" title="mountComponent"></a>mountComponent</h2><p>new Watcher(vm, updateComponent)</p>
+<p>文件路径：<code>～/github/vuejs/vue/src/core/instance/lifecycle.js</code></p>
+<h2 id="initLifecycle"><a href="#initLifecycle" class="headerlink" title="initLifecycle"></a>initLifecycle</h2><hr>
+<p>文件路径：<code>～/github/vuejs/vue/src/core/instance/lifecycle.js</code></p>
+<h2 id="updateDOMListeners"><a href="#updateDOMListeners" class="headerlink" title="updateDOMListeners"></a>updateDOMListeners</h2><p>createElem<br>    -&gt; invokeCreateHooks<br>        -&gt; updateDOMListeners</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://willwei.github.io/2018/08/10/webpack/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Will Wei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fruit time">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/10/webpack/" itemprop="url">webpack 笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-10T00:00:00+08:00">
+                2018-08-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>loader</p>
+<p>plugin</p>
+<p>chunk</p>
+<p>module</p>
+<h2 id="webpack-3-x-x"><a href="#webpack-3-x-x" class="headerlink" title="webpack@3.x.x"></a><a href="mailto:webpack@3.x.x" target="_blank" rel="noopener">webpack@3.x.x</a></h2><p>周期</p>
+<h2 id="webpack-4-x-x"><a href="#webpack-4-x-x" class="headerlink" title="webpack@4.x.x"></a><a href="mailto:webpack@4.x.x" target="_blank" rel="noopener">webpack@4.x.x</a></h2><p>周期</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://willwei.github.io/2018/08/10/performance/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Will Wei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fruit time">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/10/performance/" itemprop="url">Web Performance 笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-10T00:00:00+08:00">
+                2018-08-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="performance"><a href="#performance" class="headerlink" title="performance"></a>performance</h1><h2 id="html"><a href="#html" class="headerlink" title="html"></a>html</h2><h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><p>阻塞渲染</p>
+<h2 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h2><p>因为JS将会中断CSSOM构建，所以同样也是阻塞渲染</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://willwei.github.io/2018/08/10/javascript/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Will Wei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fruit time">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/10/javascript/" itemprop="url">JavaScript</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-10T00:00:00+08:00">
+                2018-08-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p>引擎，编译器，作用域</p>
+<h2 id="this"><a href="#this" class="headerlink" title="this"></a>this</h2><p>关键字，提供了一种更优雅的方式来隐式“传递”一个对象的引用</p>
+<h2 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h2><p>函数在非定义的词法作用域被调用</p>
+<h2 id="原型"><a href="#原型" class="headerlink" title="原型"></a>原型</h2><h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://willwei.github.io/2018/05/13/vue-observe/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Will Wei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fruit time">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/13/vue-observe/" itemprop="url">Vue Observer 源码学习笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-13T21:58:31+08:00">
+                2018-05-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Vue-Observer"><a href="#Vue-Observer" class="headerlink" title="Vue Observer"></a>Vue Observer</h1><h2 id="流程分析"><a href="#流程分析" class="headerlink" title="流程分析"></a>流程分析</h2><p><img src="/images/vue-observer.png" alt="observer"></p>
+<h3 id="流程一，初始化"><a href="#流程一，初始化" class="headerlink" title="流程一，初始化"></a>流程一，初始化</h3><p>响应式初始化</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在初始化属性时，初始化观察者，并且遍历属性，使其成为响应属性</span></span><br><span class="line">initState</span><br><span class="line">-&gt; initData</span><br><span class="line">  -&gt; observe(data, <span class="literal">true</span>)</span><br><span class="line">    -&gt; <span class="keyword">new</span> Observer(data)</span><br><span class="line">      -&gt; walk</span><br><span class="line">        -&gt; defineReactive(obj, keys[i])</span><br><span class="line">          -&gt; <span class="keyword">new</span> Dep () <span class="comment">// 一个属性对应一个Dep实例</span></span><br><span class="line">-&gt; <span class="keyword">new</span> Watcher (vm, updateComponent, noop) <span class="comment">// 运行updateComponent进行求值，updateComponent返回值始终为undefined，由依赖触发其更新</span></span><br><span class="line">  -&gt; watcher.get() <span class="comment">// 执行updateComponent函数，此时第一次运行render</span></span><br></pre></td></tr></table></figure>
+<h3 id="流程二，收集依赖"><a href="#流程二，收集依赖" class="headerlink" title="流程二，收集依赖"></a>流程二，收集依赖</h3><p>UpdateComponent函数执行时[watcher]，观察者收集依赖：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 渲染函数运行时，触发各个属性的getter</span></span><br><span class="line">reactiveGetter[ defineReactive ]</span><br><span class="line">  -&gt; dep.depend()</span><br><span class="line">    -&gt; watcher.addDep() <span class="comment">// 收集render中用到的各个属性对应的dep，保存到watcher.deps组数中</span></span><br><span class="line">      -&gt; dep.addSubs() <span class="comment">// 此时watcher被收集为订阅者</span></span><br></pre></td></tr></table></figure>
+<h3 id="流程三，触发更新"><a href="#流程三，触发更新" class="headerlink" title="流程三，触发更新"></a>流程三，触发更新</h3><p>属性被赋值时，值变更触发依赖更新：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 属性发生变更时，触发对应属性的setter</span></span><br><span class="line">reactiveSetter[ defineReactive ]</span><br><span class="line">  -&gt; dep.notify() <span class="comment">// 发布消息</span></span><br><span class="line">    -&gt; subs[i].update()</span><br><span class="line">      -&gt; queueWatcher</span><br><span class="line">        -&gt; flushSchedulerQueue</span><br><span class="line">          -&gt; watcher.run()</span><br></pre></td></tr></table></figure>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><h3 id="Observer-观察者"><a href="#Observer-观察者" class="headerlink" title="Observer [观察者]"></a>Observer [观察者]</h3><hr>
+<p>源码注释👹</p>
+<p><code>Observer class that are attached to each observed object. Once attached, the observer converts target object&#39;s property keys into getter/setters that collect dependencies and dispatches updates.</code></p>
+<p>解读</p>
+<p>观察者，会为目标对象上的各个属性添加<code>getter/setters</code>, 用于收集依赖，触发更新。</p>
+<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">value: any;</span><br><span class="line">dep: Dep;</span><br><span class="line">vmCount: number; <span class="comment">// 某个JS对象被作为data的vm个数</span></span><br></pre></td></tr></table></figure>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><ul>
+<li>constructor</li>
+<li>walk</li>
+<li>observeArray</li>
+</ul>
+<h4 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">observe(data, <span class="literal">true</span>)</span><br><span class="line">  -&gt; <span class="keyword">new</span> Observer(data)</span><br><span class="line">    -&gt; walk to defineReactive</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">defineReactive</span><br><span class="line">  -&gt; reactiveGetter</span><br><span class="line">    -&gt; dep.depend()</span><br><span class="line">      -&gt; Dep.target.addDep(<span class="keyword">this</span>)</span><br><span class="line"></span><br><span class="line">  -&gt; reactiveSetter</span><br><span class="line">    -&gt; dep.notify()</span><br><span class="line">      -&gt; subs[i].update()</span><br><span class="line">        -&gt; queueWatcher(<span class="keyword">this</span>)</span><br><span class="line">          -&gt; nextTick</span><br><span class="line">            -&gt; watcher.run()</span><br><span class="line">              -&gt; <span class="keyword">this</span>.getAndInvoke(<span class="keyword">this</span>.cb) <span class="comment">// 运行expOrFn，收集依赖，执行$watch的回调</span></span><br></pre></td></tr></table></figure>
+<h3 id="Watcher-侦听器"><a href="#Watcher-侦听器" class="headerlink" title="Watcher [侦听器]"></a>Watcher [侦听器]</h3><hr>
+<p>源码中的注释👹</p>
+<p><code>A watcher parses an expression, collects dependencies, and fires callback when the expression value changes. This is used for both the $watch() api and directives.</code></p>
+<p>侦听器，解析一个表达式，并且收集过程中的依赖，当表达式的值发生变化时，触发回调函数。</p>
+<h4 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">vm: Component,</span><br><span class="line">expression: string,</span><br><span class="line">cb: <span class="built_in">Function</span>,</span><br><span class="line">id: number,</span><br><span class="line">deep: boolean, <span class="comment">// 是否监听一个对象内的属性变更</span></span><br><span class="line">user: boolean, <span class="comment">// options default false</span></span><br><span class="line">computed: boolean, <span class="comment">// 监听的是否为计算属性</span></span><br><span class="line">sync: boolean, <span class="comment">// options default false</span></span><br><span class="line">dirty: boolean,</span><br><span class="line">active: boolean,</span><br><span class="line">dep: Dep,</span><br><span class="line">deps: <span class="built_in">Array</span>&lt;Dep&gt;, <span class="comment">// 用于记录依赖</span></span><br><span class="line">newDeps: <span class="built_in">Array</span>&lt;Dep&gt;, <span class="comment">// 记录reactiveGetter每次执行获取的依赖，和deps对比，移除不再需要的订阅器</span></span><br><span class="line">depIds: SimpleSet,</span><br><span class="line">newDepIds: SimpleSet,</span><br><span class="line">before: ?<span class="built_in">Function</span>,</span><br><span class="line">getter: <span class="built_in">Function</span>,</span><br><span class="line">value: any</span><br></pre></td></tr></table></figure>
+<h4 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h4><ul>
+<li>get</li>
+<li>cleanupDeps</li>
+<li>update</li>
+<li>run</li>
+<li>getAndInvoke</li>
+<li>evaluate</li>
+<li>depend</li>
+<li>teardown</li>
+</ul>
+<h4 id="流程-1"><a href="#流程-1" class="headerlink" title="流程"></a>流程</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Watcher(vm, expOrFn, cb, opitons)</span><br><span class="line">  -&gt; <span class="keyword">this</span>.value = <span class="keyword">this</span>.get()</span><br><span class="line">    -&gt; pushTarget(<span class="keyword">this</span>)</span><br><span class="line">    -&gt; value = <span class="keyword">this</span>.getter.call(vm, vm) <span class="comment">// 运行expOrFn，将触发reactiveGetter收集依赖    </span></span><br><span class="line">    -&gt; popTarget()</span><br><span class="line">    -&gt; <span class="keyword">this</span>.cleanupDeps()</span><br><span class="line"></span><br><span class="line">-&gt; nextTick</span><br><span class="line">-&gt; watcher.run()</span><br><span class="line">  -&gt; <span class="keyword">this</span>.getAndInvoke(<span class="keyword">this</span>.cb) <span class="comment">// 运行expOrFn，将触发reactiveGetter收集依赖 ，执行$watch的回调</span></span><br></pre></td></tr></table></figure>
+<h3 id="Dep-依赖"><a href="#Dep-依赖" class="headerlink" title="Dep [依赖]"></a>Dep [依赖]</h3><hr>
+<p>源码注释👹</p>
+<p><code>A dep is an observable that can have multiple directives subscribing to it. Sub array to save which properties depend on it</code></p>
+<p>解读</p>
+<p>用于记录订阅者（Sub数组），并为每个vue实例的侦听器添加<code>属性依赖</code></p>
+<h4 id="属性-2"><a href="#属性-2" class="headerlink" title="属性"></a>属性</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> target: ?Watcher,</span><br><span class="line">id: number,</span><br><span class="line">subs: <span class="built_in">Array</span>&lt;Watcher&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="方法-2"><a href="#方法-2" class="headerlink" title="方法"></a>方法</h4><ul>
+<li>addSub</li>
+<li>removeSub</li>
+<li>depend</li>
+<li>notify</li>
+</ul>
+<h4 id="流程-2"><a href="#流程-2" class="headerlink" title="流程"></a>流程</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Dep()</span><br></pre></td></tr></table></figure>
+<h3 id="scheduler-调度器"><a href="#scheduler-调度器" class="headerlink" title="scheduler [调度器]"></a>scheduler [调度器]</h3><p>流程</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">watcher.update()</span><br><span class="line">  - has &lt;<span class="built_in">Map</span>&gt; 多次set触发的更新去重</span><br><span class="line">  - circular &lt;<span class="built_in">Map</span>&gt;</span><br><span class="line">  - index &lt;<span class="built_in">Number</span>&gt; 当前正在运行中的侦听器队列索引</span><br><span class="line">  - waiting &lt;<span class="built_in">Boolean</span>&gt; 不同侦听器进行更新操作时，在上个侦听器完成更新之前，等待</span><br><span class="line">  - flushing &lt;<span class="built_in">Boolean</span>&gt; 是否正在运行队列中的任务</span><br><span class="line">  - queueWatcher(<span class="keyword">this</span>)</span><br><span class="line">    -&gt; waiting = <span class="literal">true</span></span><br><span class="line">    -&gt; nextTick(flushSchedulerQueue)</span><br><span class="line">      -&gt; flushing = <span class="literal">true</span></span><br><span class="line">      -&gt; queue.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a.id - b.id)</span><br><span class="line">      -&gt; has[id] = <span class="literal">null</span></span><br><span class="line">      -&gt; watcher.run()</span><br><span class="line">      -&gt; resetSchedulerState()</span><br><span class="line">        -&gt; waiting = flushing = <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p>关于queueWatcher</p>
+<p>源码注释👹</p>
+<p><code>Push a watcher into the watcher queue. Jobs with duplicate IDs will be skipped unless it&#39;s pushed when the queue is being flushed.</code></p>
+<p>解读</p>
+<p>将监听器放入队列尾部。重复的任务将会被跳过。</p>
+<h3 id="关于flushSchedulerQueue"><a href="#关于flushSchedulerQueue" class="headerlink" title="关于flushSchedulerQueue"></a>关于flushSchedulerQueue</h3><p>源码注释👹</p>
+<p><code>Flush both queues and run the watchers.</code></p>
+<p>解读</p>
+<p>清空队列并且运行监听器的回调函数</p>
+<h3 id="检测变化的注意事项"><a href="#检测变化的注意事项" class="headerlink" title="检测变化的注意事项"></a>检测变化的注意事项</h3><ol>
+<li>不能检测到对象属性的添加或删除。</li>
+</ol>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://willwei.github.io/2018/05/13/vue-patch/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Will Wei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fruit time">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/13/vue-patch/" itemprop="url">VuePatch源码学习笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-13T21:58:31+08:00">
+                2018-05-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Vue-Patch"><a href="#Vue-Patch" class="headerlink" title="Vue Patch"></a>Vue Patch</h1><h2 id="VNode-了解"><a href="#VNode-了解" class="headerlink" title="VNode 了解"></a>VNode 了解</h2><h2 id="createPatchFunction"><a href="#createPatchFunction" class="headerlink" title="createPatchFunction"></a>createPatchFunction</h2><hr>
+<p>文件路径：<code>~/github/vuejs/vue/src/core/vdom/patch.js</code></p>
+<p>笔记：</p>
+<p>这个文件中会创建一个patch的函数，传入nodeOps以及modules</p>
+<p>关于nodeOps</p>
+<p>关于modules</p>
+<p>其中，modules中包含了baseModules以及platformModules；baseModules中包含了ref及directives的钩子函数，分别为<code>create, update, destory</code>，这些函数会在vnode对应的周期<code>&quot;create&quot;, &quot;activate&quot;, &quot;update&quot;, &quot;remove&quot;, &quot;destroy&quot;</code>中被调用。</p>
+<h2 id="Patch-流程"><a href="#Patch-流程" class="headerlink" title="Patch 流程"></a>Patch 流程</h2><hr>
+<p>patch函数在vue进行update时被调用</p>
+<p>文件路径：<code>~/github/vuejs/vue/src/core/vdom/patch.js</code></p>
+<p>条件一：<code>isUndef(oldVnode)</code></p>
+<p>源码注释👹<br><code>empty mount (likely as component), create new root element</code></p>
+<p>解读：当未创建vnode时，创建一个新的vnode作为根节点</p>
+<p>条件二：<code>!isRealElement &amp;&amp; sameVnode</code></p>
+<p>源码注释👹<br><code>patch existing root node</code></p>
+<p>解读：如果不是一个真实的dom节点，则对根节点开始进行patchVnode的流程</p>
+<p>流程<br><code>patchVnode</code></p>
+<p>条件二：<code>isRealElement || sameVnode</code></p>
+<p>解读：不是相同的节点，则创建一个新的dom节点，并把老的节点移除（如果是真实元素的话，会根据这个节点再创建vnode）</p>
+<p>流程<br><code>create new Elm</code><br>➡️<br><code>update parent placeholder node element, recursively</code><br>➡️<br><code>destroy old node</code></p>
+<h2 id="PatchVnode-流程"><a href="#PatchVnode-流程" class="headerlink" title="PatchVnode 流程"></a>PatchVnode 流程</h2><p>如果两个vnode引用是相同的，会直接退出</p>
+<p>data.hook.prepatch ➡️</p>
+<p>directive.cbs.update<br>data.hook.update ➡️</p>
+<p>情况1, vnode.text -&gt; setTextContent<br>!vnode.text</p>
+<p>情况2, oldCh &amp;&amp; ch -&gt; updateChildren</p>
+<p>情况3, ch -&gt; addVnodes</p>
+<p>情况4, oldCh -&gt; removeVnodes</p>
+<h2 id="updateChildren-流程"><a href="#updateChildren-流程" class="headerlink" title="updateChildren 流程"></a>updateChildren 流程</h2><p>情况1，sameVnode(oldStartVnode, newStartVnode)，不需要移动<br>情况2，sameVnode(oldEndVnode, newEndVnode)，不需要移动<br>情况3，sameVnode(oldStartVnode, newEndVnode)，当前节点右移<br>情况4，sameVnode(oldEndVnode, newStartVnode)，当前节点右移<br>情况5-1，有key的情况 sameVnode(vnodeToMove, newStartVnode)，当前节点左移<br>情况5-2，没有key的情况 创建一个新的节点</p>
+<p>当结束上述比对时</p>
+<p>如果oldVnode先遍历完，此时newStarIndex到newEndIndex是新增的节点，则addVnodes<br>如果newVnode先遍历完，此时oldStarIndex到oldEndIndex是需要删除的节点，则removeVnodes</p>
+<h2 id="createElm"><a href="#createElm" class="headerlink" title="createElm"></a>createElm</h2><p>情况1，如果vnode.elm已经存在，说明该vnode在先前的render中，已经使用，而在这里作为一个新的节点来使用，需要克隆一个新的vnode，不影响之前的节点</p>
+<p>如果是组件，则创建对应组件，并退出</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Will Wei</p>
+              <p class="site-description motion-element" itemprop="description">step on javascript</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Will Wei</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

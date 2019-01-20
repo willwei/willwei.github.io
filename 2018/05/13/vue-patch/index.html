@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-cn">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="vue,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Vue PatchVNode 了解createPatchFunction 文件路径：~/github/vuejs/vue/src/core/vdom/patch.js 笔记： 这个文件中会创建一个patch的函数，传入nodeOps以及modules 关于nodeOps 关于modules 其中，modules中包含了baseModules以及platformModules；baseModules">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VuePatch源码学习笔记">
+<meta property="og:url" content="http://willwei.github.io/2018/05/13/vue-patch/index.html">
+<meta property="og:site_name" content="fruit time">
+<meta property="og:description" content="Vue PatchVNode 了解createPatchFunction 文件路径：~/github/vuejs/vue/src/core/vdom/patch.js 笔记： 这个文件中会创建一个patch的函数，传入nodeOps以及modules 关于nodeOps 关于modules 其中，modules中包含了baseModules以及platformModules；baseModules">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-01-20T10:07:59.428Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="VuePatch源码学习笔记">
+<meta name="twitter:description" content="Vue PatchVNode 了解createPatchFunction 文件路径：~/github/vuejs/vue/src/core/vdom/patch.js 笔记： 这个文件中会创建一个patch的函数，传入nodeOps以及modules 关于nodeOps 关于modules 其中，modules中包含了baseModules以及platformModules；baseModules">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://willwei.github.io/2018/05/13/vue-patch/">
+
+
+
+
+
+  <title>VuePatch源码学习笔记 | fruit time</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-cn">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">fruit time</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://willwei.github.io/2018/05/13/vue-patch/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Will Wei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="fruit time">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">VuePatch源码学习笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-13T21:58:31+08:00">
+                2018-05-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Vue-Patch"><a href="#Vue-Patch" class="headerlink" title="Vue Patch"></a>Vue Patch</h1><h2 id="VNode-了解"><a href="#VNode-了解" class="headerlink" title="VNode 了解"></a>VNode 了解</h2><h2 id="createPatchFunction"><a href="#createPatchFunction" class="headerlink" title="createPatchFunction"></a>createPatchFunction</h2><hr>
+<p>文件路径：<code>~/github/vuejs/vue/src/core/vdom/patch.js</code></p>
+<p>笔记：</p>
+<p>这个文件中会创建一个patch的函数，传入nodeOps以及modules</p>
+<p>关于nodeOps</p>
+<p>关于modules</p>
+<p>其中，modules中包含了baseModules以及platformModules；baseModules中包含了ref及directives的钩子函数，分别为<code>create, update, destory</code>，这些函数会在vnode对应的周期<code>&quot;create&quot;, &quot;activate&quot;, &quot;update&quot;, &quot;remove&quot;, &quot;destroy&quot;</code>中被调用。</p>
+<h2 id="Patch-流程"><a href="#Patch-流程" class="headerlink" title="Patch 流程"></a>Patch 流程</h2><hr>
+<p>patch函数在vue进行update时被调用</p>
+<p>文件路径：<code>~/github/vuejs/vue/src/core/vdom/patch.js</code></p>
+<p>条件一：<code>isUndef(oldVnode)</code></p>
+<p>源码注释👹<br><code>empty mount (likely as component), create new root element</code></p>
+<p>解读：当未创建vnode时，创建一个新的vnode作为根节点</p>
+<p>条件二：<code>!isRealElement &amp;&amp; sameVnode</code></p>
+<p>源码注释👹<br><code>patch existing root node</code></p>
+<p>解读：如果不是一个真实的dom节点，则对根节点开始进行patchVnode的流程</p>
+<p>流程<br><code>patchVnode</code></p>
+<p>条件二：<code>isRealElement || sameVnode</code></p>
+<p>解读：不是相同的节点，则创建一个新的dom节点，并把老的节点移除（如果是真实元素的话，会根据这个节点再创建vnode）</p>
+<p>流程<br><code>create new Elm</code><br>➡️<br><code>update parent placeholder node element, recursively</code><br>➡️<br><code>destroy old node</code></p>
+<h2 id="PatchVnode-流程"><a href="#PatchVnode-流程" class="headerlink" title="PatchVnode 流程"></a>PatchVnode 流程</h2><p>如果两个vnode引用是相同的，会直接退出</p>
+<p>data.hook.prepatch ➡️</p>
+<p>directive.cbs.update<br>data.hook.update ➡️</p>
+<p>情况1, vnode.text -&gt; setTextContent<br>!vnode.text</p>
+<p>情况2, oldCh &amp;&amp; ch -&gt; updateChildren</p>
+<p>情况3, ch -&gt; addVnodes</p>
+<p>情况4, oldCh -&gt; removeVnodes</p>
+<h2 id="updateChildren-流程"><a href="#updateChildren-流程" class="headerlink" title="updateChildren 流程"></a>updateChildren 流程</h2><p>情况1，sameVnode(oldStartVnode, newStartVnode)，不需要移动<br>情况2，sameVnode(oldEndVnode, newEndVnode)，不需要移动<br>情况3，sameVnode(oldStartVnode, newEndVnode)，当前节点右移<br>情况4，sameVnode(oldEndVnode, newStartVnode)，当前节点右移<br>情况5-1，有key的情况 sameVnode(vnodeToMove, newStartVnode)，当前节点左移<br>情况5-2，没有key的情况 创建一个新的节点</p>
+<p>当结束上述比对时</p>
+<p>如果oldVnode先遍历完，此时newStarIndex到newEndIndex是新增的节点，则addVnodes<br>如果newVnode先遍历完，此时oldStarIndex到oldEndIndex是需要删除的节点，则removeVnodes</p>
+<h2 id="createElm"><a href="#createElm" class="headerlink" title="createElm"></a>createElm</h2><p>情况1，如果vnode.elm已经存在，说明该vnode在先前的render中，已经使用，而在这里作为一个新的节点来使用，需要克隆一个新的vnode，不影响之前的节点</p>
+<p>如果是组件，则创建对应组件，并退出</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vue/" rel="tag"># vue</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/13/vue-observe/" rel="prev" title="Vue Observer 源码学习笔记">
+                Vue Observer 源码学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Will Wei</p>
+              <p class="site-description motion-element" itemprop="description">step on javascript</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue-Patch"><span class="nav-number">1.</span> <span class="nav-text">Vue Patch</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#VNode-了解"><span class="nav-number">1.1.</span> <span class="nav-text">VNode 了解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#createPatchFunction"><span class="nav-number">1.2.</span> <span class="nav-text">createPatchFunction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Patch-流程"><span class="nav-number">1.3.</span> <span class="nav-text">Patch 流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PatchVnode-流程"><span class="nav-number">1.4.</span> <span class="nav-text">PatchVnode 流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#updateChildren-流程"><span class="nav-number">1.5.</span> <span class="nav-text">updateChildren 流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#createElm"><span class="nav-number">1.6.</span> <span class="nav-text">createElm</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Will Wei</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
